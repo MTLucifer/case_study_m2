@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.23638968481375358" orientation="VERTICAL" prefHeight="711.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <items>
+    <AnchorPane fx:id="input" minHeight="150.0" minWidth="-Infinity" onMouseClicked="#resetView" prefHeight="268.0" prefWidth="1100.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="13.0" prefHeight="134.0" prefWidth="138.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="addCustomer" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="163.0" text="Check In" GridPane.columnSpan="2147483647" />
+                  <Button fx:id="deleteButton" alignment="CENTER" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="151.0" text="Check Out" textAlignment="RIGHT" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                  <Button fx:id="findButton" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#find" prefHeight="26.0" prefWidth="70.0" text="Find" textAlignment="RIGHT" GridPane.rowIndex="2" />
+                  <Button fx:id="update" mnemonicParsing="false" onAction="#update" prefHeight="26.0" prefWidth="81.0" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#help" prefHeight="26.0" prefWidth="74.0" text="About" GridPane.rowIndex="3" />
+                  <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/checkin.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@icon/checkout.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@icon/search.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <GridPane layoutX="183.0" layoutY="9.0" prefHeight="143.0" prefWidth="896.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.20001220703125" minWidth="10.0" prefWidth="115.8" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="170.8" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.20001220703125" minWidth="10.0" prefWidth="136.40000000000003" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="170.19998779296873" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="118.20001220703125" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.00006103515625" minWidth="10.0" prefWidth="172.80000000000007" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="51.19999694824219" minHeight="0.8000091552734361" prefHeight="49.59999084472656" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="71.19999542236329" minHeight="10.0" prefHeight="52.99999389648438" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="61.59998779296873" minHeight="10.0" prefHeight="43.400006103515636" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Customer Name :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="inputCusName" promptText="Lê Thị Châu" GridPane.columnIndex="1" />
+                  <Label text="Customer Phone :" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="inputCusPhone" promptText="0987654321" GridPane.columnIndex="3" />
+                  <Label text="Cat name :" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="inputCatName" promptText="Mun" GridPane.columnIndex="5" />
+                  <Label text="Cat Age :" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="inputCatAge" promptText="3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Cat Hair color :" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="inputHairColor" promptText="Vàng" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Cat species :" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ChoiceBox fx:id="inputSpecies" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="inputCastrated" mnemonicParsing="false" text="Castrated" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <Label text="Cat Weight (kg) :" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="inputWeight" promptText="3.6" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label text="Cat Gender :" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <ChoiceBox fx:id="inputGender" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+         <effect>
+            <Reflection />
+         </effect>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="-Infinity" prefHeight="570.0" prefWidth="1100.0">
+         <children>
+            <TableView fx:id="table" layoutX="9.0" layoutY="9.0" minWidth="-Infinity" onMouseClicked="#selected" prefHeight="494.0" prefWidth="1082.0">
+              <columns>
+                <TableColumn fx:id="outputCusName" maxWidth="251.20003700256348" minWidth="-1.0" prefWidth="127.20000648498535" text="Customer Name" />
+                <TableColumn fx:id="outputCusPhone" maxWidth="425.60003089904785" minWidth="-1.0" prefWidth="119.20004272460938" text="Customer Phone" />
+                  <TableColumn fx:id="outputCatName" maxWidth="591.2000370025635" minWidth="-1.0" prefWidth="92.7999267578125" text="Cat name" />
+                  <TableColumn fx:id="outputCatSpecies" maxWidth="617.600061416626" minWidth="-1.0" prefWidth="150.4000244140625" text="Cat species" />
+                  <TableColumn fx:id="outputCatGender" maxWidth="701.6000308990479" minWidth="-1.0" prefWidth="70.39999389648438" text="Cat Gender" />
+                  <TableColumn fx:id="outputCatAge" maxWidth="779.2000370025635" minWidth="-1.0" prefWidth="67.20001220703125" text="Cat Age" />
+                  <TableColumn fx:id="outputWeight" minWidth="0.0" prefWidth="78.39996337890625" text="Cat Weight" />
+                  <TableColumn fx:id="outputHairColor" maxWidth="687.2000122070312" minWidth="-1.0" prefWidth="109.5999755859375" text="Cat Hair color" />
+                  <TableColumn fx:id="outputCastrated" maxWidth="613.5999694824218" minWidth="-1.0" prefWidth="78.4000244140625" text="Castrated" />
+                  <TableColumn fx:id="outputTime" maxWidth="613.5999694824218" minWidth="-1.0" prefWidth="63.20001220703125" text="Time C/I" />
+                  <TableColumn fx:id="outputPrice" maxWidth="613.5999694824218" minWidth="-1.0" prefWidth="95.99993896484375" text="Price (VND)" />
+              </columns>
+            </TableView>
+            <Label layoutX="465.0" layoutY="503.0" text="\@Copyright Nguyễn Thanh Tiến" />
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>
